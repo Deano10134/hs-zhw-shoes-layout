@@ -1,21 +1,22 @@
 /********** Fixes **********/
 
 * {
-  margin:0;
-  padding:0;
-  border:0;
+  margin: 0;
+  padding: 0;
+  border: 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
 
-.clearfix:after {
-  content: ".";
+.clearfix::after {
+  content: "";
   display: block;
   clear: both;
-  visibility: hidden;
-  height: 0;
-  line-height: 0;
+}
+
+.clearfix {
+  display: flow-root;
 }
 
 .clear {
@@ -23,5 +24,174 @@
 }
 
 /* Positioning Classes */
+.three-column-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px; /* Adjust spacing between columns */
+}
+.three-column-grid > div {
+  padding: 20px; /* Consistent padding */
+  border: 3px solid #8B0000; /* Dark red border */
+  background-color: #f9f9f9; /* Light gray background */
+  text-align: center; /* Center-align text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.three-column-grid > div img {
+  width: 100%; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 350px; /* Adjust maximum height */
+  object-fit: cover; /* Cover the container */
+  margin-bottom: 15px; /* Add spacing below the image */
+  border-radius: 5px; /* Rounded corners for the image */
+}
+
+.grid-layout {
+  display: grid;
+  padding-bottom: 20px; /* Add padding */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Adjust spacing between items */
+}
+
+.grid-layout > .shadow {
+  padding: 15px; /* Optional: Add padding */
+  border: 1px solid #ddd; /* Optional: Add a border */
+  text-align: center; /* Optional: Center-align text */
+}
+
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create three equal columns */
+  gap: 20px; /* Add spacing between grid items */
+  padding: 20px; /* Add padding around the grid */
+}
+
+.details-grid > div {
+  padding: 15px; /* Optional: Add padding */
+  border: 1px solid #ddd; /* Optional: Add a border */
+  text-align: left; /* Align text to the left */
+}
+
+.details-section {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  gap: 20px; /* Add spacing between columns */
+  text-align: left; /* Align text to the left */
+  font-family: Arial, sans-serif; /* Set font */
+  font-size: 14px; /* Set font size */
+  color: #000; /* Black text */
+  background-color: #fff; /* White background */
+  padding: 20px; /* Add padding */
+  border: 1px solid #ddd; /* Add border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.details-section div {
+  padding: 15px; /* Add padding inside each column */
+  border-right: 1px solid #ddd; /* Add right border */
+}
+
+.details-section div:last-child {
+  border-right: none; /* Remove border for the last column */
+}
+
+.details-section div h3 {
+  margin-bottom: 10px; /* Add spacing below headings */
+  font-size: 16px; /* Set heading font size */
+  font-weight: bold; /* Make headings bold */
+}
+
+.details-section div p,
+.details-section div address {
+  margin-bottom: 10px; /* Add spacing below paragraphs and addresses */
+}
+
+.details-section div ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+}
+
+.details-section div ul li {
+  margin-bottom: 5px; /* Add spacing between list items */
+}
+
+.archive-grid {
+  display: block; /* Switch to block layout for vertical alignment */
+  padding: 15px; /* Add padding */
+  padding-top:15px;
+  background-color: #fff; /* White background */
+  border: 1px solid #ddd; /* Add border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  font-family: Arial, sans-serif; /* Optional: Set font */
+  font-size: 14px; /* Optional: Set font size */
+  color: #000; /* Black text */
+}
+
+.archive-grid h2 {
+  margin-bottom: 10px; /* Add spacing below the main heading */
+  font-size: 18px; /* Optional: Set heading font size */
+  font-weight: bold; /* Optional: Make heading bold */
+}
+
+.archive-grid h3 {
+  margin-top: 15px; /* Add spacing above year headings */
+  margin-bottom: 5px; /* Add spacing below year headings */
+  font-size: 16px; /* Optional: Set year heading font size */
+  font-weight: bold; /* Optional: Make year headings bold */
+}
+
+.archive-grid ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.archive-grid ul li {
+  margin-bottom: 5px; /* Add spacing between list items */
+}
+
+.archive-grid ul ul {
+  margin-left: 15px; /* Indent nested lists */
+}
+
+.archive-grid ul ul li {
+  list-style: circle; /* Use circle bullets for nested lists */
+}
+
+.featured-and-archive-grid {
+  display: grid; /* Use grid layout */
+  grid-template-columns: 2fr 1fr; /* Two-thirds for featured, one-third for archive */
+  gap: 20px; /* Add spacing between sections */
+  align-items: start; /* Align items at the top */
+  margin-bottom: 20px; /* Add spacing below the container */
+}
+
+.footer{
+  background-color: #fff;
+}
+#footer {
+  display: block;
+  margin-top: 20px; /* Add spacing above the footer */
+  width: 100%; /* Full width */
+  background-color: #f9f9f9; /* Light gray background */
+  color: #333; /* Dark gray text */
+  padding: 10px 20px; /* Add padding */
+  text-align: center; /* Center-align text */
+  font-family: Arial, sans-serif; /* Set font */
+  font-size: 12px; /* Set font size */
+  border-top: 1px solid #ddd; /* Add a subtle top border */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow above the footer */
+}
+
+#footer a {
+  color: #8B0000; /* Dark red for links */
+  text-decoration: none; /* Remove underline */
+}
+
+#footer a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
 
 
